@@ -24,8 +24,10 @@
 		            <div class="page-header">
 		              <h1 id="tables">Products <span data-remodal-target="add_drug" class="plus_sign">+</span></h1>
 		            </div>
-
+			
+					<!-- react entry point -->
 		            <div class="bs-component" id="items_table">
+		            <!-- // -->
 
 		            <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div><!-- /example -->
 				</div>
@@ -36,7 +38,7 @@
 	
 
 
-	<?php     require_once('_footer.html');    ?>
+	<?php     require_once('_footer.html');     ?>
 
 
 
