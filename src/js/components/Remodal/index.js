@@ -1,7 +1,8 @@
-// open modal-window with buy-status
-// and information about product
-var ItemInfo = React.createClass({
-	render: function() {
+import React from 'react';
+
+export default class ItemInfo extends React.Component {
+
+	render() {
 		return (
 			<div>
 				<h1>Successful purchase</h1>	
@@ -11,4 +12,5 @@ var ItemInfo = React.createClass({
 			</div>
 		)
 	}
-})
+
+}

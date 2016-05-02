@@ -1,25 +1,31 @@
-// show one product (<tr>) and counter
-// of available this product
-var ItemShow = React.createClass({
-	
-	getInitialState() {
-		return {
+import React from 'react';
+import { render } from 'react-dom';
+import ItemInfo from '../Remodal';
+
+
+export default class ItemShow extends React.Component {
+
+	constructor(props) {
+		super(props);
+
+		this.state = {
 			count: this.props.item.count,
 			disableClass: '',
 			soldText: '',
-		};
-	},
+		}
+	}
 
-	orderItem() {		
+	orderItem() {
 
-		var orderedItemCount = this.state.count-1;
+		console.log(this.state.count);
+		const orderedItemCount = this.state.count-1;
 
 
 		if(orderedItemCount < 0) {
 			return 
 		}		
 
-		ReactDOM.render(
+		render(
 			<ItemInfo infoText={ this.props.item.infoText } title={this.props.item.title} />,  
 			document.getElementById('info_about_item')
 		);
@@ -36,24 +42,30 @@ var ItemShow = React.createClass({
 			count: orderedItemCount,
 		})				
 		
-	},
+	}
 
-	render: function() {
+	render() {
 
-		var iconCursorStyle = {cursor: 'pointer'};
+		const iconCursorStyle = {cursor: 'pointer'};
 
 		return (
-			<tr id="itemClass" className={this.state.disableClass}>
+			<tr class={this.state.disableClass}>
 				<td>{this.props.item.index}</td>
 				<td>{this.props.item.title}</td>
 				<td>{this.state.count}</td>
 				<td>{this.props.item.price}</td>
-				<td id="buy">
+				<td>
 					<span>{ this.state.soldText }</span>
-					<span id="buy_icon" data-remodal-target="item_info" onClick={this.orderItem} style={iconCursorStyle} className="glyphicon glyphicon-shopping-cart"></span>
+					<span 
+						id="buy_icon" 
+						data-remodal-target="item_info" 
+						onClick={this.orderItem.bind(this)} 
+						style={iconCursorStyle} 
+						class="glyphicon glyphicon-shopping-cart">
+					</span>
 				</td>
 			</tr>
-		)
-  }
+		);
+	}
+}
 
-})
