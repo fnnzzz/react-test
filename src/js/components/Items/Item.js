@@ -8,16 +8,26 @@ export default class ItemShow extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {
-			count: this.props.item.count,
-			disableClass: '',
-			soldText: '',
+		if(this.props.item.count == 0) {
+			this.state = {
+				count: 0,
+				disableClass: 'disabled',
+				remodalAction: '',
+				soldText: 'ПРОДАНО',
+			}
 		}
+		else {
+			this.state = {
+				count: this.props.item.count,
+				disableClass: '',
+				soldText: '',
+			}
+		}
+
 	}
 
 	orderItem() {
 
-		console.log(this.state.count);
 		const orderedItemCount = this.state.count-1;
 
 
@@ -34,7 +44,7 @@ export default class ItemShow extends React.Component {
 			this.setState({
 				disableClass: 'disabled',
 				remodalAction: '',
-				soldText: 'SOLD OUT',
+				soldText: 'ПРОДАНО',
 			})
 		}
 

@@ -15,7 +15,7 @@ export default class MainPage extends React.Component {
 
 						<div class="col-lg-12">
 							<div class="page-header">
-								<h1 id="tables">Products <span data-remodal-target="add_drug" class="plus_sign">+</span></h1>
+								<h1 id="tables">Лекарства</h1>
 							</div>
 							
 							<div class="bs-component">

@@ -7,9 +7,8 @@ export default class BannerInfo extends React.Component {
 		return ( 
 			<div class="bs-component">
 				<div class="jumbotron">
-					<h1>TestShop</h1>
-					<p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-					<p><a class="btn btn-primary btn-lg">Learn more</a></p>
+					<h1>Интернет-магазин лекарств</h1>
+					<p>Здесь вы можете приобрести нужные препараты и узнать подробную информацию о их приёме.</p>
 				</div>
 			</div>	
      	);
