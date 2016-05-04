@@ -1,14 +1,14 @@
 var webpack = require("webpack");
 var path = require('path');
+var sourceDir = path.join(__dirname, './src');
+var destDir = path.join(__dirname, './dist');
 
 module.exports = {
   // devtool: 'inline-source-map',
-  context: path.join(__dirname, './src/js'),
+  context: path.join(sourceDir, './js'),
   entry: {
     js: [
-      path.join(__dirname, './src/js/entry.js'),
-      'webpack-dev-server/client?http://127.0.0.1:8080/',
-      'webpack/hot/only-dev-server',
+      path.join(sourceDir, './js/entry.js'),
     ],
     vendor: [
       'react', 
@@ -16,7 +16,7 @@ module.exports = {
     ]
   },
   output: {
-    path: path.join(__dirname, './dist/js'),
+    path: path.join(destDir),
     filename: 'common.min.js'
   },
   module: {
@@ -30,6 +30,13 @@ module.exports = {
           plugins: ['react-html-attrs'],
         }
       },
+      {
+        test: /\.html$/,
+        loader: 'file',
+        query: {
+          name: '[name].[ext]'
+        }
+      },      
       // {test: /\.css$/, loader: "style!css"},
       // {test: /\.(woff|svg|ttf|eot)([\?]?.*)$/, loader: "file-loader?name=[name].[ext]"}
     ]
@@ -37,7 +44,7 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx'],
     modules: [
-      path.resolve('./src/js/'),
+      path.resolve('./js/'),
       'node_modules'
     ]
   },
@@ -62,5 +69,9 @@ module.exports = {
       //   },
       //   sourceMap: false
       // }),
-  ]
+  ],
+  devServer: {
+    contentBase: path.join(sourceDir),
+    noInfo: true
+  }
 };

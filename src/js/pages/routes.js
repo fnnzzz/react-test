@@ -12,11 +12,17 @@ export default {
   component: App,
   childRoutes: [
     {
-      path: '/',
-      getComponent(location, cb) {
-        System.import('./pages/Main')
-          .then(loadRoute(cb))
-          .catch(errorLoading);
+      path: "*",
+      getComponent: (location, callback) => {
+        require.ensure([], require => {
+          callback(null, require("./Main").default)
+        })
+      },
+      path: "about",
+      getComponent: (location, callback) => {
+        require.ensure([], require => {
+          callback(null, require("./About").default)
+        })
       }
     },
   ]
