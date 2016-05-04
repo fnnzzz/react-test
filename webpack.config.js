@@ -2,19 +2,23 @@ var webpack = require("webpack");
 var path = require('path');
 
 module.exports = {
-  devtool: 'inline-source-map',
-  entry: [
-    'webpack-dev-server/client?http://127.0.0.1:8080/',
-    'webpack/hot/only-dev-server',
-    './src/js/entry.js'
-  ],
-  output: {
-    filename: './dist/js/common.min.js'
+  // devtool: 'inline-source-map',
+  context: path.join(__dirname, './src/js'),
+  entry: {
+    js: [
+      path.join(__dirname, './src/js/entry.js'),
+      'webpack-dev-server/client?http://127.0.0.1:8080/',
+      'webpack/hot/only-dev-server',
+    ],
+    vendor: [
+      'react', 
+      'react-dom',
+    ]
   },
-  // resolve: {
-  //   modulesDirectories: ['node_modules', 'src/js'],
-  //   extensions: ['', '.js']
-  // },
+  output: {
+    path: path.join(__dirname, './dist/js'),
+    filename: 'common.min.js'
+  },
   module: {
     loaders: [
       {
@@ -30,8 +34,33 @@ module.exports = {
       // {test: /\.(woff|svg|ttf|eot)([\?]?.*)$/, loader: "file-loader?name=[name].[ext]"}
     ]
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+    modules: [
+      path.resolve('./src/js/'),
+      'node_modules'
+    ]
+  },
   plugins: [
       new webpack.HotModuleReplacementPlugin(),
-      new webpack.NoErrorsPlugin()
+      new webpack.NoErrorsPlugin(),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        minChunks: Infinity,
+        filename: 'vendor.bundle.js'
+      }),
+      // new webpack.LoaderOptionsPlugin({
+      //   minimize: false,
+      //   debug: true
+      // }),
+      // new webpack.optimize.UglifyJsPlugin({
+      //   compress: {
+      //     warnings: false
+      //   },
+      //   output: {
+      //     comments: false
+      //   },
+      //   sourceMap: false
+      // }),
   ]
 };

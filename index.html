@@ -16,107 +16,76 @@
 
 </head>
 <body>
-	
-
-<!-- Navigation -->
-
-<div class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <a href="./index.php" class="navbar-brand">TestShop</a>
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <div class="navbar-collapse collapse" id="navbar-main">
-        <ul class="nav navbar-nav">
-          <li>
-            <a href="#">Menu-1</a>
-          </li>
-         <li>
-            <a href="#">Menu-2</a>
-          </li>
-         <li>
-            <a href="#">Menu-3</a>
-          </li>         
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Войти</a></li>
-          <li><a href="#">Регистрация</a></li>
-        </ul>
-
-      </div>
-    </div>
-  </div>
+  
 
 
 
 
+  <!-- navigation -->
+  <div id="react_nav"></div>
 
-  <!-- Main -->
+  <!-- react app init -->
+  <div id="react_app"></div>
 
-	
-	<div id="react_app"></div>
+
+
 
 
 
 
 
   <!-- Footer -->
+    <div class="remodal" data-remodal-id="add_drug">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <h1>Add item</h1>
+    
 
-  	<div class="remodal" data-remodal-id="add_drug">
-		<button data-remodal-action="close" class="remodal-close"></button>
-		<h1>Add item</h1>
-		
-
-		 <div class="row add_item_wrap">
+     <div class="row add_item_wrap">
           <div class="col-lg-12">
-          		
-          		<br>
-          		<br>
+              
+              <br>
+              <br>
 
-          		<div id="inputs_container">
-          			
-          		</div>
+              <div id="inputs_container">
+                
+              </div>
 
           </div>
         </div>
 
 
-		<br>
+    <br>
 
-		<div class="row" id="controls_add_item">
-			
-		</div>
-	</div>
-	
+    <div class="row" id="controls_add_item">
+      
+    </div>
+  </div>
+  
 
-	<div class="remodal" data-remodal-id="item_info">
-		<button data-remodal-action="close" class="remodal-close"></button>
-		
-		<div id="info_about_item"></div>
+  <div class="remodal" data-remodal-id="item_info">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    
+    <div id="info_about_item"></div>
 
-		<br>
+    <br>
 
-		<button data-remodal-action="confirm" class="remodal-confirm">OK</button>
-	</div>
+    <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+  </div>
+  
 
+  <!-- libs -->
 
-	<!-- libs -->
+  <script   
+    src="https://code.jquery.com/jquery-2.2.3.min.js"   
+    integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   
+    crossorigin="anonymous">
+  </script>
+  
+  <script type="text/javascript" src="./dist/libs/remodal/dist/remodal.min.js"></script>
 
-	<script   
-		src="https://code.jquery.com/jquery-2.2.3.min.js"   
-		integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   
-		crossorigin="anonymous">
-	</script>
-	
-	<script type="text/javascript" src="./dist/libs/remodal/dist/remodal.min.js"></script>
-
-	<!-- react -->
-	<script type="text/javascript" src="./dist/js/common.min.js"></script>
+  <!-- react -->  
+  <script type="text/javascript" src="./dist/js/vendor.bundle.js"></script>
+  <script type="text/javascript" src="./dist/js/common.min.js"></script>
 
 
 </body>

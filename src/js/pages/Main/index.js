@@ -1,12 +1,16 @@
 import React from 'react';
 import BannerInfo from '../../components/BannerInfo';
 import ItemsList from '../../components/Items/ItemsList';
+import Nav from '../../components/Nav';
 
 
 export default class MainPage extends React.Component {
 	render() {
 		return (
 			<div class="page-header">
+				<div>
+					<Nav />
+				</div>
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-12">
