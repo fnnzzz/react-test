@@ -35,7 +35,7 @@ export default class ItemShow extends React.Component {
 				disableClass: 'disabled',
 				remodalAction: '',
 				soldText: 'SOLD OUT',
-			})		
+			})
 		}
 
 		this.setState({
