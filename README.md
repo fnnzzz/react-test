@@ -7,4 +7,4 @@
 -- all changes in code with your components will be automatically refresh the page (hot reload feature).
 
 ---------------
-demo page: [http://46.101.241.90/testshop_react/dist/](demo page)
+[DEMO PAGE !!!](http://46.101.241.90/testshop_react/dist/)
