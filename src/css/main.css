@@ -39,3 +39,8 @@ tr.disabled #buy_icon {
 #itemClass #buy {
 	text-align: center;
 }
+
+
+.active_link_header {
+	background-color: #178acc;
+}

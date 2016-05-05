@@ -1,0 +1,21 @@
+{
+  "name": "webpack_test_react",
+  "description": "test webpack cfg for reactjs",
+  "main": "webpack.config.js",
+  "authors": [
+    "Vlad Feninets"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/finn1nets/react_test",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "remodal": "^1.0.7",
+    "jquery": "^2.2.3"
+  }
+}

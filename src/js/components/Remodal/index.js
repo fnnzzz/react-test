@@ -12,5 +12,4 @@ export default class ItemInfo extends React.Component {
 			</div>
 		)
 	}
-
 }

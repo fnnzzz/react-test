@@ -20,13 +20,13 @@ export default class Nav extends React.Component {
           <div class="navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav">
               <li>
-                <Link to='/'>Main page</Link>
+                <Link activeClassName="active_link_header" to='/'>Main page</Link>
               </li>
              <li>
-                <Link to='about'>About page</Link>
+                <Link activeClassName="active_link_header" to='about'>About page</Link>
               </li>
              <li>
-                <a href="#">Menu-3</a>
+                <Link activeClassName="active_link_header" to='contacts'>Contacts</Link>
               </li>         
             </ul>
 
