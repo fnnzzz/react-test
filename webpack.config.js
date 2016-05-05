@@ -3,8 +3,20 @@ var path = require('path');
 var sourceDir = path.join(__dirname, './src');
 var destDir = path.join(__dirname, './dist');
 
+
+// ---------------
+var nodeEnv = process.env.NODE_ENV || 'development';
+var isProd = nodeEnv === 'production';
+// ---------------
+
+
 module.exports = {
-  // devtool: 'inline-source-map',
+  
+  // devtool: isProd ? 'hidden-source-map' : 'eval-source-map',
+
+  // devtool: 'eval-source-map',
+  // devtool: 'hidden-source-map',
+
   context: path.join(sourceDir, './js'),
   entry: {
     js: [
@@ -37,12 +49,15 @@ module.exports = {
           name: '[name].[ext]'
         }
       },      
-      // {test: /\.css$/, loader: "style!css"},
+      {
+        test: /\.css$/, loader: "style!css"
+      },
       // {test: /\.(woff|svg|ttf|eot)([\?]?.*)$/, loader: "file-loader?name=[name].[ext]"}
     ]
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],
+    modulesDirectories: ['node_modules', 'bower_components'],
     modules: [
       path.resolve('./js/'),
       'node_modules'
@@ -55,6 +70,14 @@ module.exports = {
         name: 'vendor',
         minChunks: Infinity,
         filename: 'vendor.bundle.js'
+      }),
+      new webpack.optimize.UglifyJsPlugin({
+        minimize: true,  
+        
+        compress: {
+          warnings: false
+        }
+
       }),
       // new webpack.LoaderOptionsPlugin({
       //   minimize: false,

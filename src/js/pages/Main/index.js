@@ -14,7 +14,7 @@ export default class MainPage extends React.Component {
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-12">
-							<BannerInfo />
+							<BannerInfo title="TestShop" descr="shopping has never been sooooo simple"/>
 						</div>
 
 						<div class="col-lg-12">
