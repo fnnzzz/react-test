@@ -1,7 +1,7 @@
 import React from 'react';
 import ItemShow from './Item';
 
-const defaultItems = [
+let defaultItems = [
   {
     index: 1,
     title: 'Book',
@@ -44,9 +44,19 @@ const defaultItems = [
 
 ];
 
+
+
 export default class Item extends React.Component {
 	constructor(props) {
 		super(props);
+
+
+    if(!localStorage.getItem("defaultItems")) {
+      localStorage.setItem("defaultItems", JSON.stringify(defaultItems));
+    }
+
+    defaultItems = JSON.parse(localStorage.getItem("defaultItems"));
+
 
 		this.state = {
 			defaultItems

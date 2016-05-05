@@ -8,16 +8,38 @@ export default class ItemShow extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {
-			count: this.props.item.count,
-			disableClass: '',
-			soldText: '',
+
+		if(this.props.item.count == 0) {
+			this.state = {
+				count: 0,
+				disableClass: 'disabled',
+				soldText: 'SOLD OUT',
+			}
+		}
+
+		else {
+			this.state = {
+				count: this.props.item.count,
+				disableClass: '',
+				soldText: '',
+			}
 		}
 	}
 
 	orderItem() {
 
-		console.log(this.state.count);
+		const items = JSON.parse(localStorage.defaultItems);
+
+		for (var i = 0; i < items.length; i++) {
+		   if(this.props.item.title === items[i].title){
+		       items[i].count -= 1; 
+		       break; 
+		   }
+		}
+
+		localStorage.setItem("defaultItems", JSON.stringify(items)); 
+
+
 		const orderedItemCount = this.state.count-1;
 
 
@@ -33,7 +55,6 @@ export default class ItemShow extends React.Component {
 		if(orderedItemCount == 0) {
 			this.setState({
 				disableClass: 'disabled',
-				remodalAction: '',
 				soldText: 'SOLD OUT',
 			})
 		}
