@@ -1,5 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
-import MainPage from './pages/Main';
+import { Router, Route, browserHistory } from 'react-router';
+import rootRoute from './pages/routes';
+import '../index.html';
 
-render(<MainPage />, document.getElementById('react_app'));
+render(
+  <Router history={browserHistory} routes={rootRoute} />,
+  document.getElementById('react_app')
+);
