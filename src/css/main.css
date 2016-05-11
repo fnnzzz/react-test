@@ -44,3 +44,16 @@ tr.disabled #buy_icon {
 .active_link_header {
 	background-color: #178acc;
 }
+
+.count_order_ul {
+	padding-right: 70px;
+
+}
+
+.count_order_p {
+	margin: 0;
+	/* line-height: 45px; */
+	padding-top: 15px;
+	padding-bottom: 15px;
+	color: #ebebeb;
+}

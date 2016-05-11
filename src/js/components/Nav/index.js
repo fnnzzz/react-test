@@ -31,9 +31,13 @@ export default class Nav extends React.Component {
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Войти</a></li>
-              <li><a href="#">Регистрация</a></li>
+                <li><a href="#">Войти</a></li>
+                <li><a href="#">Регистрация</a></li>
             </ul>
+
+              <ul class="nav navbar-nav navbar-right count_order_ul">
+                  <li><p class="count_order_p">Количество ваших покупок: 5</p></li>
+              </ul>
 
           </div>
         </div>
