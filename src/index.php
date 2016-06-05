@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>React Test Project</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cerulean/bootstrap.min.css">	
+  
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.7/remodal.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.7/remodal-default-theme.min.css">
+
+    <script type="text/javascript" src="php_registration/js/sha1.js"></script>
+    <script type="text/javascript" src="php_registration/js/user.js"></script>
+
+</head>
+<body>
+
+
+
+  <!-- navigation -->
+  <div id="react_nav"></div>
+
+  <!-- react app init -->
+  <div id="react_app"></div>
+
+
+  <!-- Footer -->
+
+  <div class="remodal" data-remodal-id="item_info">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    
+    <div id="info_about_item"></div>
+  
+    <br>
+  
+    <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+  </div>
+
+
+
+  <div class="remodal" data-remodal-id="registration_need">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    
+    <h3>Для совершения покупок нужно быть зарегистрированным пользователем!</h3>
+  
+    <br>
+  
+    <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+  </div>
+  
+
+  <!-- libs -->
+
+  <script   
+    src="https://code.jquery.com/jquery-2.2.3.min.js"   
+    integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   
+    crossorigin="anonymous">
+  </script>
+
+  <!-- libs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.7/remodal.min.js" 
+      type="text/javascript">
+  </script>
+
+  <!-- react -->  
+  <script type="text/javascript" src="./vendor.bundle.js"></script>
+  <script type="text/javascript" src="./common.min.js"></script>
+
+
+</body>
+</html>

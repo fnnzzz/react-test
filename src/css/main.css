@@ -1,0 +1,46 @@
+.plus_sign{
+	cursor: pointer;
+	font-size: 4rem;
+	padding-left: 1rem; 
+}
+
+.table_info {
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.add_item_wrap .form-group { 
+	text-align: left;
+}
+
+.remodal-cancel {
+	margin-left: 2rem !important
+}
+
+tr.disabled {
+	color: #999;
+}
+
+tr.disabled #buy_icon {
+	display: none;
+}
+
+
+#info_about_item h3 {
+	text-align: left;
+}
+
+#info_about_item p {
+	text-align: left;
+}
+
+#itemClass #buy {
+	text-align: center;
+}
+
+
+.active_link_header {
+	background-color: #178acc;
+}
